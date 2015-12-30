@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
 body {padding-top:90px;}
 
 .container {
@@ -115,3 +114,29 @@ background: #fff none repeat scroll 0 0;
 	background-image: none!important;
 	text-shadow:none!important;
 }
+
+.frequency-text {
+	background-color: #ff8383;
+    border-radius: 4px;
+    font-weight: bold;
+    color:#fff;
+    padding:5px;
+}
+
+.freq-cloud .plus {
+	display:none;
+}
+
+.freq-cloud.hover .plus {
+	display:block;
+
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    margin-top:-25px;
+    margin-left:110px;
+    position:fixed;
+    color:#acacac;
+}
+
+

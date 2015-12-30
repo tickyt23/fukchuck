@@ -5,3 +5,7 @@
 $ ->
 	$('.notecard').hover (event) ->
 		$(this).toggleClass("hover")
+
+$ ->
+	$('.freq-cloud').hover (event) ->
+		$(this).toggleClass("hover")

@@ -1,0 +1,68 @@
+<span style="display:none;">
+    <% words = post.body.split(" ") %>
+    <% frequencies = Hash.new(0) %>
+    <% words.each do |word| %>
+        <% frequencies[word.downcase] += 1 %>
+    <% end %>
+    <% frequencies = frequencies.sort_by do |word,count| %>
+        <% count %>
+    <% end %>
+    <%= tally = frequencies.each do|word,count| %>
+        <%=  puts word+ ("nothing here") + count.to_s %>
+    <% end %>
+
+    <% a = tally.last(3).reverse.join(" ")  %>
+</span>
+
+<span>
+  <%= a.titleize %>
+</span>
+
+
+
+
+* Working counter! 
+
+<span style="display:none"><%= var = Post.pluck(:body) %> </span>
+<span style="display:none">
+    <%= bank = var.join.downcase.split(/[^'’\p{L}\p{M}]+/) %>
+    <% frequencies = Hash.new(0) %>
+    <%= bank.each { |word| frequencies[word] += 1 } %>
+    <% frequencies = frequencies.sort_by {|a, b| b } %>
+    <%= tally = frequencies.each { |word, frequency| puts word + " = " + frequency.to_s } %>
+    <%= a = tally.last(10).reverse.join(", ")  %>
+</span>
+<span> 
+    <%= a.titleize.gsub(/, (\d+)/, "= \\1") %>
+</span>
+
+
+
+
+
+
+<span style="display">
+    <%= bank = var.join.downcase.split(/[^'\w]+/) %>
+    <% frequencies = Hash.new(0) %>
+    <%= bank.each do |word| %>
+        <% frequencies[word] += 1 %>
+    <% end %>
+    <% frequencies = frequencies.sort_by do |word,count| %>
+        <% count %>
+    <% end %>
+
+    <%= tally = frequencies.each do|word,count| %>
+        <%  puts word + count.to_s + "," %>
+    <% end %>
+
+    <% a = tally.last(10).reverse.join(" ")  %>
+    <%= a.titleize %>
+</span>
+
+
+words = text.split(" ")
+frequencies = Hash.new(0)
+words.each { |word| frequencies[word] += 1 }
+frequencies = frequencies.sort_by {|a, b| b }
+frequencies.reverse!
+frequencies.each { |word, frequency| puts word + " " + frequency.to_s }

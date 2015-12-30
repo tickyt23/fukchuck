@@ -18,6 +18,7 @@ group :production, :staging do
 	gem 'pg'
 end
 
+gem "jqcloud-rails"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
