@@ -2,7 +2,12 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="freq-cloud"><span class="frequency-text">Word Counter</span>
   <div class="plus">
-    <span style="display:none"><%= var = Post.pluck(:body) %> </span>
+    <span style="display:none">
+
+
+      <%= var = Post.where( user_id: current_user ).pluck(:body) %></span>
+
+
     <span style="display:none">
         <%= bank = var.join.downcase.split(/[^'’\p{L}\p{M}]+/) %>
         <% frequencies = Hash.new(0) %>
