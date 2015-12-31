@@ -19,6 +19,7 @@ group :production, :staging do
 end
 
 gem "jqcloud-rails"
+gem 'jquery-turbolinks'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
