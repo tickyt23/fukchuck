@@ -40,9 +40,34 @@
         </div>
         <div class="created-at"><%= "Posted " + time_ago_in_words(post.created_at) + " ago"%></div>
         <br>
-        <span class="post-body" style="white-space: pre-wrap;"><%= @postbody = post.body %>
-        </span><br >
+        <span class="post-body" style="white-space: pre-wrap;"><%= @postbody = post.body %></div>
+          <br>
+        <div class="single-counter"><span class="single-text">WC</span>
+          <div class="single-words">
+            <span style="display:none;">
+              <% words = post.body.split(/[^'’\p{L}\p{M}]+/) %>
+              <% frequencies = Hash.new(0) %>
+              <% words.each do |word| %>
+                  <% frequencies[word.downcase] += 1 %>
+              <% end %>
+              <% frequencies = frequencies.sort_by do |word,count| %>
+                  <% count %>
+              <% end %>
+              <%= tally = frequencies.each do|word,count| %>
+                  <%=  puts word+ ("nothing here") + count.to_s %>
+              <% end %>
+
+              <%= tally = frequencies.each { |word, frequency| puts word + " = " + frequency.to_s } %>
+            <%= a = tally.last(5).reverse.join(", ")  %>
+            </span>
+            <br>
+            <span>
+             <%= a.titleize.gsub(/, (\d+)/, " = \\1") %>
+            </span>
+            <br>
+          </div>
         </div>
+        <br>
       <div class="post-cutter"> </div>
  <% end %>  
 <% end %>

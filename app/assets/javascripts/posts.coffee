@@ -9,3 +9,7 @@ $ ->
 $ ->
 	$('.freq-cloud').hover (event) ->
 		$(this).toggleClass("hover")
+
+$ ->
+	$('.single-counter').hover (event) ->
+		$(this).toggleClass("hover")

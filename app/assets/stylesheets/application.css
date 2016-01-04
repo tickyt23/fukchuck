@@ -139,4 +139,27 @@ background: #fff none repeat scroll 0 0;
     color:#acacac;
 }
 
+.single-counter .single-words {
+	display:none;
+}
+
+.single-counter.hover .single-words {
+	display:block;
+}
+
+.single-text {
+	background-color: #ff8383;
+    border-radius: 12px;
+    color: white;
+    float: left;
+    font-weight: bold;
+    padding: 1px 7px;
+}
+
+.single-words {
+	float: left;
+    margin-left: 8px;
+    margin-top: -19px;
+    color:#acacac;
+}
 
